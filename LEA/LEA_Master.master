@@ -1,0 +1,258 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="LEA_Master.master.cs" Inherits="LEA_Master" %>
+
+<%@ Register Src="Includes/header.ascx" TagName="Header" TagPrefix="hd" %>
+<%@ Register Src="Includes/Header_CartMenu.ascx" TagName="CartMenu" TagPrefix="cm" %>
+<%@ Register Src="Includes/Header_SP_EN.ascx" TagName="SPENMenu" TagPrefix="SPEN" %>
+<%@ Register Src="Includes/Header_SocialMenu.ascx" TagName="SocialMenu" TagPrefix="scl" %>
+<%@ Register Src="Includes/Header_Menu.ascx" TagName="HeaderMenu" TagPrefix="hm" %>
+<%@ Register Src="Includes/Footer.ascx" TagName="footer" TagPrefix="ft" %>
+<%@ Import Namespace="System.Globalization" %>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="<%= ConfigurationManager.AppSettings.Get("SiteUrlMain") + "images/header_logo.png" %>" rel="shortcut icon" type="image/x-icon" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-781010452"></script>
+
+
+    <script type="text/javascript">
+        !function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '736506260586418'); 
+fbq('track', 'PageView');
+</script>
+<%-- <noscript>
+ <img height="1" width="1" src="https://www.facebook.com/tr?id=736506260586418&ev=PageView&noscript=1"/>
+ </noscript>--%>
+
+
+    
+
+
+
+<script type='application/ld+json'>
+{
+  "@context": "http://www.schema.org",
+  "@type": "LocalBusiness",
+  "name": "Leatodo",
+  "email" : "info@leaebook.com",
+  "url": "https://www.leatodo.com/Index.aspx?l=es-ES",
+  "telephone" : "(503) 2246 3333",
+  "image" : "https://www.leatodo.com/images/header_logo.png",
+  "address": {
+       "@type": "PostalAddress",
+    "streetAddress": "Bulevar Santa Elena y Calle Alegría",
+    "addressLocality": "Edificio Interalia, Segundo Nivel",
+    "addressRegion": "Antiguo Cuscatlán",
+    "postalCode": "1502",
+    "addressCountry": "El Salvador"
+  },  
+  "openingHoursSpecification" : {
+                "@type" : "OpeningHoursSpecification",
+                "dayOfWeek" : {
+                "@type" : "DayOfWeek",
+                "name" : "Monday - Sun"
+                }
+                }
+                     }
+    </script>
+
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-781010452');
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128559417-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-128559417-1');
+    </script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            // browser window scroll (in pixels) after which the "back to top" link is shown
+            var offset = 300,
+                //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+                offset_opacity = 1200,
+                //duration of the top scrolling animation (in ms)
+                scroll_top_duration = 600,
+                //grab the "back to top" link
+                $back_to_top = $('.cd-top');
+
+            //hide or show the "back to top" link
+            $(window).scroll(function () {
+                ($(this).scrollTop() > offset) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+                if ($(this).scrollTop() > offset_opacity) {
+                    $back_to_top.addClass('cd-fade-out');
+                }
+            });
+
+            //smooth scroll to top
+            $back_to_top.on('click', function (event) {
+                event.preventDefault();
+                $('body,html').animate({
+                    scrollTop: 0,
+                }, scroll_top_duration
+                );
+            });
+
+        });
+
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title></title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="js/responsivemobilemenu.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/abeeze-font/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="css/ARBERKLEY/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="css/amr/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="css/gabriola/stylesheet.css" rel="stylesheet" type="text/css" />
+    <style>
+        /*.cd-top.cd-is-visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+            transition: opacity 0.3s ease 0s, visibility 0s ease 0s;
+        }
+
+        .cd-top {
+            background: #3a96fd url("images/toparw.png") no-repeat scroll center !important;
+            bottom: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: inline-block;
+            height: 10px;
+            opacity: 0;
+            overflow: hidden;
+            position: fixed;
+            right: 0px;
+            text-indent: 100%;
+            transition: opacity 0.3s ease 0s, visibility 0s ease 0.3s;
+            visibility: hidden;
+            white-space: nowrap;
+            width: 40px;
+        }*/
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-70795827-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Ads: 781010452 -->
+
+
+    <meta name="google-site-verification" content="zJOW5P-mlqUL0LyIpEyJ29_z9cpNrEFzIxDTOAJbq0U" />
+</head>
+<body>
+    <img height="1" width="1" src="https://www.facebook.com/tr?id=736506260586418&ev=PageView&noscript=1"/>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <div>
+            <!--************************hedar start**********************-->
+            <div class="hedar_top">
+                <div class="wrap1">
+                    <cm:CartMenu ID="CartMenu1" runat="server" />
+                </div>
+            </div>
+            <div class="hedar">
+                <%--Header Logo--%>
+                <div class="wrap1">
+                    <div class="logo">
+                        <a href="us/" id="header_aIndex1">
+                            <img src="http://192.168.1.183:281/images/header_logo1.png" alt="">
+                        </a>
+                    </div>
+                    <hd:Header ID="header" runat="server" />
+                    <div class="serch-boxx">
+                        <div style="float: left;">
+                            <div>
+                                <asp:DropDownList ID="drpglobalcat" runat="server" class="Globalsearchcat">
+                                    <asp:ListItem Text="All" Value="0"></asp:ListItem>
+                                    <asp:ListItem Text="Story" Value="1"></asp:ListItem>
+                                    <asp:ListItem Text="English" Value="104"></asp:ListItem>
+                                </asp:DropDownList>
+
+
+                                <%-- <div data-value="search-alias=aps" class="nav-search-facade">
+
+                                    <i class="overlay-arrow">&#9660;</i>
+                                </div>--%>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            $("#txt_Globalsearch").keyup(function (event) {
+                                if (event.keyCode == 13) {
+                                    $("#Button1").click();
+                                }
+                            });
+                        </script>
+                        <div style="float: left;">
+                            <div class="nav-search-field">
+                                <asp:TextBox ID="txt_Globalsearch" runat="server" class="Globalsearchnickinp"></asp:TextBox>
+                            </div>
+                            <div id="nav-iss-attach"></div>
+                        </div>
+                        <div>
+                            <asp:Button ID="Button1" runat="server" Text="Go" class="nav-input" OnClick="btn_search" CssClass="Globalsearchbtn" />
+                        </div>
+                    </div>
+                    <div class="signmenu">
+                        <%--cart menu--%>
+
+                        <div class="spbox">
+                            <%--SP|EN--%>
+                            <SPEN:SPENMenu ID="SPENMenu1" runat="server" />
+                            <%--Social--%>
+                            <scl:SocialMenu ID="SocialMenu1" runat="server" />
+                        </div>
+                    </div>
+
+                    <%--header menu--%>
+                    <hm:HeaderMenu ID="HeaderMenu1" runat="server" />
+
+
+                </div>
+            </div>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div style="margin: 10px;"></div>
+
+        <div class="toparw">
+            <a href="#0" class="cd-top"></a>
+        </div>
+        <!--************************footer**********************-->
+        <ft:footer ID="footer1" runat="server" />
+    </form>
+</body>
+</html>

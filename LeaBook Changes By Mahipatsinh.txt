@@ -1,0 +1,39 @@
+CSS Changes
+------------------------
+style.css
+  1.forgottxt row Number 1363 Add flot to Right
+  2.Globalsearchcat  row numer 3737 Add cursor:pointer
+  3.Globalsearchbtn row number 3779 Add cursor:pointer
+  
+  
+LEA_Master.master
+----------------------
+	1.Add Following Jquery
+            var hh = '<%=System.Threading.Thread.CurrentThread.CurrentCulture.Name %>';
+            if (hh == "es-ES")
+                $(".breadcrumb a").first().attr("href", "/");
+            else
+                $(".breadcrumb a").first().attr("href", "/us/");
+  
+ 
+ 
+New SP
+-------------------
+1.[UPS_getUserLibrary]
+ 
+ASPX PAGE            					and 						CS Pages
+-----------------------------------------------------------------------------------------
+1.Login.aspx							 |													
+2.MyLibrary.aspx						 |  MyLibrary.aspx.cs						 												
+3.LeaMaster.master						 |													
+4.Index.aspx						     |													
+1.Login.aspx							 |													
+1.Login.aspx							 |													
+1.Login.aspx							 |													
+1.Login.aspx							 |													
+1.Login.aspx							 |													
+
+Include Folder Page Changes
+------------------------------
+1.header.ascx.cs  AND header.ascx
+2.Header_SP_EN.ascx.cs

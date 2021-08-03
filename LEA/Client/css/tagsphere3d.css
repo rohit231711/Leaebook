@@ -1,0 +1,62 @@
+﻿<style type="text/css" title="text/css">
+
+
+#tags {
+  font-size: 10px;
+  width: 696px;
+  border: 2px solid #913D00;
+}
+
+#tags ul,
+#tags li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#tags ul {
+  margin: 0.6em 1em;
+}
+
+#tags li {
+  display: inline;
+}
+
+#tags a {
+  text-decoration: none;
+}
+
+/* this css applies to the elements, only once sphere3d-ized */
+
+#tags.sphere3d {
+  position: relative;
+  padding: 0;
+  height: 500px;
+  border-color: #FF7F00;
+}
+
+#tags,
+#tags.sphere3d .sphere3d-noclick,
+#tags.sphere3d li,
+#tags.sphere3d a {
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+}
+
+#tags.sphere3d li {
+
+}
+
+#tags.sphere3d a {
+  color: #fff;
+  background: #FF7F00;
+  padding: 0.3em 0.6em;
+}
+
+#tags.sphere3d a:hover {
+  color: #fff;
+  background: #913D00;
+}
+
+</style>

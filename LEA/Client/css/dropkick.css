@@ -1,0 +1,112 @@
+
+/* === DROPKICK CSS === */
+/* One container to bind them... */
+.dk_container {
+	background: url(../images/top-select-bg.png) right top no-repeat #000000;
+	border:1px solid #000000;
+	padding:0 0 0 4px; height:16px; width:96px;
+
+}
+.dk_container2 {
+	background: url(../images/top-select-bg.png) right top no-repeat #000000;
+	border:1px solid #000000;
+	padding:0 0 0 4px; height:16px; width:96px;
+
+}
+
+
+/* The outer container of the options */
+.dk_options {
+	}
+
+.dk_options a {
+			/*added this instead of the padding top/bottom. we can now calculate it exactly */
+	
+	
+}
+
+.dk_options li {
+	background-color: #2E3135;
+    float: left;
+    list-style: none outside none;
+    padding: 2px 0 2px 4px;
+    width: 179px;
+}
+
+.dk_options li:first-child {
+	display: none;
+}
+
+.dk_options #divider {
+	width: 90%;							/*flexible value - leave as it is!*/
+	height: .1em;						/*rounded to a neat ems value*/		
+	margin: auto;
+	background-color: #3a3c3f;
+	display:none;
+}
+
+.dk_options li:last-child #divider {
+	display: none;
+}
+
+.dk_options a:hover,.dk_option_current a {
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 0 .05em 0 #282b2e;		/*change to ems*/
+}
+
+/* Inner container for options, this is what makes the scrollbar possible. */
+
+/******  End Theme ******/
+/***** Critical to the continued enjoyment of working dropdowns ******/
+.dk_container {
+	display: none;
+	float: left;
+	position: relative;
+}
+
+.dk_container a {
+	/*width: auto!important;		I don't like using !important, but this needs to override a fixed pixel width which is added inline by the dropkick script - or comment out line 116 in the js*/
+	font-size:10px; width:100%; float:left; height:100%; color:#d2d2d2;
+	line-height:16px;
+}
+
+
+.dk_open {
+	position: relative;
+}
+
+.dk_open .dk_options {
+	display: block;
+}
+
+
+.dk_options {
+	display: none;
+	margin:3px 0 0;			/*change to ems*/
+	position: absolute;
+	right: 0;
+	width: 100%;
+	z-index:1000;
+}
+
+.dk_options a,.dk_options a:link,.dk_options a:visited {
+	display: block;
+}
+
+.dk_touch .dk_options {
+	overflow: hidden;
+}
+
+.dk_touch .dk_options_inner {
+	max-height: none;
+	overflow: visible;
+}
+
+.dk_fouc select {
+	position: relative;
+	top: -99999em;
+	visibility: hidden;
+}
+
+/***** End Critical to the continued enjoyment of working dropdowns ******/

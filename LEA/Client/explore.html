@@ -1,0 +1,412 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Explore</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/dropkick.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.baby_bear').dropkick();
+            $('.mama_bear').dropkick();
+            $('.papa_bear').dropkick();
+        });
+    </script>
+    <link rel="stylesheet" href="css/dropkick.css" />
+    <style type="text/css">
+        /* Two custom themes */
+        .dk_theme_orange
+        {
+        }
+        .dk_theme_orange .dk_options a:hover, .dk_theme_orange .dk_option_current a
+        {
+            color: #;
+        }
+        .dk_theme_orange .dk_toggle, .dk_theme_orange.dk_open .dk_toggle
+        {
+            background-color: transparent;
+        }
+        .dk_theme_orange.dk_focus .dk_toggle
+        {
+            box-shadow: 0 0 5px #E15A01;
+            -moz-box-shadow: 0 0 5px #E15A01;
+            -webkit-box-shadow: 0 0 5px #E15A01;
+        }
+        
+        .dk_theme_black
+        {
+            background: #ffffff;
+            border: 1px solid #cccccc;
+            padding: 0px;
+            height: 27px;
+            width: 152px;
+            margin: 0 15px 0 0;
+        }
+        .dk_theme_black .dk_toggle, .dk_theme_black.dk_open .dk_toggle
+        {
+            background-color: transparent;
+            background: url(images/downgreen.png) top right no-repeat;
+            color: #333333;
+            text-shadow: none;
+            height: 18px;
+            font-size: 13px;
+            padding: 5px;
+            width: 142px !important;
+        }
+        .dk_theme_black .dk_options a
+        {
+            background-color: #333;
+            color: #fff;
+            text-shadow: none;
+        }
+        .dk_theme_black .dk_options a:hover, .dk_theme_black .dk_option_current a
+        {
+            background-color: #009933;
+            color: #fff;
+            text-shadow: #604A42 0 1px 0;
+        }
+    </style>
+    <script src="js/dropkick.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(function () {
+            $('.default').dropkick();
+
+            $('.black').dropkick({
+                theme: 'black'
+            });
+
+            $('.change').dropkick({
+                change: function (value, label) {
+                    alert('You picked: ' + label + ':' + value);
+                }
+            });
+
+            $('.existing_event').dropkick({
+                change: function () {
+                    $(this).change();
+                }
+            });
+
+            $('.custom_theme').dropkick({
+                theme: 'black',
+                change: function (value, label) {
+                    $(this).dropkick('theme', value);
+                }
+            });
+
+            $('.dk_container').first().focus();
+        });
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="header_main">
+                <div class="logo">
+                    <a href="#">
+                        <img src="images/logo.png" alt="" /></a>
+                </div>
+                <div class="top_right">
+                    <div class="top_form">
+                        <label>
+                            Select Your Currency
+                        </label>
+                        <div class="select_main">
+                            <select name="baby_bear" class="baby_bear">
+                                <option>Us Dollar - USD</option>
+                                <option>Us Dollar - USD</option>
+                                <option>Us Dollar - USD</option>
+                                <option>Us Dollar - USD</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cear">
+                    </div>
+                    <div class="search_main">
+                        <input type="text" value="Search" class="top_input" />
+                        <input type="button" value="GO" class="top_btn" />
+                    </div>
+                </div>
+                <div class="navigation">
+                    <ul>
+                        <li><span>&nbsp;</span><a href="#">Home</a></li>
+                        <li><span class="active">&nbsp;</span><a href="#" class="active">Explore</a></li>
+                        <li><span>&nbsp;</span><a href="#">Read</a></li>
+                        <li><span>&nbsp;</span><a href="#">Subscribe</a></li>
+                    </ul>
+                    <div class="right_login">
+                        <a href="#">login</a> <a>|</a> <a href="#">shopping cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide_main_bg">
+            <div class="container">
+                <div class="slider">
+                    <ul class="slide_main">
+                        <li>
+                            <h2>
+                                Lorem ipsum
+                            </h2>
+                            <h1>
+                                dolor sit amet</h1>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed<br />
+                                egestas posuere tristique. Donec scelerisque mi porttitor lacus<br />
+                                elementum feugiat. Fusce non magna odio.
+                            </p>
+                            <a href="#" class="view_all">
+                                <img src="images/view-all-btn.png" alt="" /></a> </li>
+                    </ul>
+                    <a href="#" class="slide-left">
+                        <img src="images/slide-left-arrow.png" alt="" /></a> <a href="#" class="slide-right">
+                            <img src="images/slide-right-arrow.png" alt="" /></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="high_lights_row">
+                <div class="high_li_part1100">
+                    <div class="explore-head">
+                        <h3>
+                            Explore</h3>
+                        <div class="divClear">
+                        </div>
+                        <p class="explore-gray">
+                            Hand-picked articles to read, absolutely free.</p>
+                        <p class="explore-black">
+                            Preview Books, or just read articles free from news, technology, science, entertainment,
+                            fashion and more.</p>
+                    </div>
+                </div>
+                <div class="high_li_part1200">
+                    <div class="explore-head">
+                        <h3>
+                            Category</h3>
+                        <div class="divClear">
+                        </div>
+                        <div class="exp-list">
+                            <ul>
+                                <li><a href="#">Art</a> </li>
+                                <li><a href="#">Automotive</a> </li>
+                                <li><a href="#">Entertainment</a> </li>
+                            </ul>
+                        </div>
+                        <div class="exp-list">
+                            <ul>
+                                <li><a href="#">Home</a> </li>
+                                <li><a href="#">Lifestyle</a> </li>
+                                <li><a href="#">Men</a> </li>
+                            </ul>
+                        </div>
+                        <div class="exp-list">
+                            <ul>
+                                <li><a href="#">News</a> </li>
+                                <li><a href="#">Science &amp; tech</a> </li>
+                                <li><a href="#">Sports</a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="high_li_part1 last">
+                </div>
+            </div>
+            <div class="contant">
+                <div class="contant_left">
+                    <div class="example">
+                        <form action="#" method="post" accept-charset="utf-8" class="example_form">
+                        <select name="theme" class="custom_theme" tabindex="5">
+                            <option value="">Most Recent</option>
+                            <option value="default">Default Theme</option>
+                            <option value="black">Dark Gloss</option>
+                            <option value="orange">Light Gloss</option>
+                        </select>
+                        </form>
+                        <form action="#" method="post" accept-charset="utf-8" class="example_form">
+                        <select name="country" class="custom_theme" tabindex="5">
+                            <option value="">English</option>
+                            <option value="default">Default Theme</option>
+                            <option value="black">Dark Gloss</option>
+                            <option value="orange">Light Gloss</option>
+                        </select>
+                        </form>
+                        <a href="#" target="_blank">
+                            <img src="images/grid.png" alt="" class="view" /></a> <a href="#" target="_blank">
+                                <img src="images/list.png" alt="" class="view" /></a>
+                    </div>
+                    <div class="explore">
+                        <div class="row2">
+                            <div class="divClear">
+                            </div>
+                            <div class="box-main">
+                                <div class="box">
+                                    <img src="images/image1.png" alt="" />
+                                    <h5>
+                                        New Business Models in Emrging Markets</h5>
+                                    <p>
+                                        Targeting the middle market can be lucrative—but companies won't be able to deliver
+                                        unless they start from scratch.</p>
+                                    <p class="ml-green">
+                                        Harvard Business Review OnPoint</p>
+                                    <p class="ml-green2">
+                                        Summer-13</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/image2.png" alt="" />
+                                    <h5>
+                                        New Business Models in Emrging Markets</h5>
+                                    <p>
+                                        Targeting the middle market can be lucrative—but companies won't be able to deliver
+                                        unless they start from scratch.</p>
+                                    <p class="ml-green">
+                                        Harvard Business Review OnPoint</p>
+                                    <p class="ml-green2">
+                                        Summer-13</p>
+                                </div>
+                                <img src="images/big-line.png" alt="" class="big-line" />
+                            </div>
+                            <div class="box-main">
+                                <div class="box">
+                                    <img src="images/image3.png" alt="" />
+                                    <h5>
+                                        New Business Models in Emrging Markets</h5>
+                                    <p>
+                                        Targeting the middle market can be lucrative—but companies won't be able to deliver
+                                        unless they start from scratch.</p>
+                                    <p class="ml-green">
+                                        Harvard Business Review OnPoint</p>
+                                    <p class="ml-green2">
+                                        Summer-13</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/image4.png" alt="" />
+                                    <h5>
+                                        New Business Models in Emrging Markets</h5>
+                                    <p>
+                                        Targeting the middle market can be lucrative—but companies won't be able to deliver
+                                        unless they start from scratch.</p>
+                                    <p class="ml-green">
+                                        Harvard Business Review OnPoint</p>
+                                    <p class="ml-green2">
+                                        Summer-13</p>
+                                </div>
+                                <img src="images/big-line.png" alt="" class="big-line" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contant_right">
+                    <div class="right_cart_box">
+                        <h6>
+                            my cart</h6>
+                        <p>
+                            You have no items in your shopping cart</p>
+                        <img src="images/my-cart-bott.png" alt="" />
+                    </div>
+                    <div class="right_populer_box">
+                        <h6>
+                            popular tags</h6>
+                        <p>
+                            <a href="#" class="tag1">Antivirus</a> <a href="#" class="tag2">Apple </a><a href="#"
+                                class="tag3">Games</a> <a href="#" class="tag4">Reference </a><a href="#" class="tag5">
+                                    Tools</a> <a href="#" class="tag6">Web</a> <a href="#" class="tag7">View All tags</a>
+                        </p>
+                        <img src="images/populer-tag-bott.png" alt="" />
+                    </div>
+                    <div class="right_social">
+                        <a href="#">
+                            <img src="images/face-icon.png" alt="" /></a> <a href="#">
+                                <img src="images/t-icon.png" alt="" /></a> <a href="#">
+                                    <img src="images/rss-icon.png" alt="" /></a> <a href="#">
+                                        <img src="images/face-icon.png" alt="" /></a>
+                    </div>
+                    <div class="right_specials">
+                        <a href="#" class="down">
+                            <img src="images/arrow-down.png" alt="" /></a> <a href="#" class="up">
+                                <img src="images/arrow-up.png" alt="" /></a>
+                        <h1>
+                            Specials</h1>
+                        <ul>
+                            <li>
+                                <img src="images/spacial-mag-1.png" class="spcial-mag" alt="" />
+                                <p class="titel">
+                                    Lorem ipsum dolor sit amet</p>
+                                <p class="disc">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <a href="#" class="link">
+                                    <img src="images/arrow2.png" alt="" />&nbsp;&nbsp; Add to Wishlist</a> </li>
+                            <li>
+                                <img src="images/spacial-mag-2.png" class="spcial-mag" alt="" />
+                                <p class="titel">
+                                    Lorem ipsum dolor sit amet</p>
+                                <p class="disc">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <a href="#" class="link">
+                                    <img src="images/arrow2.png" alt="" />&nbsp;&nbsp; Add to Wishlist</a> </li>
+                            <li>
+                                <img src="images/spacial-mag-3.png" class="spcial-mag" alt="" />
+                                <p class="titel">
+                                    Lorem ipsum dolor sit amet</p>
+                                <p class="disc">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <a href="#" class="link">
+                                    <img src="images/arrow2.png" alt="" />&nbsp;&nbsp; Add to Wishlist</a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_main">
+            <div class="container">
+                <div class="f-in">
+                    <ul class="f-link1">
+                        <li>
+                            <h3>
+                                Information</h3>
+                        </li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Explore</a></li>
+                        <li><a href="#">Read</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Subscription</a></li>
+                    </ul>
+                    <ul class="f-link1">
+                        <li>
+                            <h3>
+                                About Us</h3>
+                        </li>
+                        <li><a href="#">Company overview</a></li>
+                        <li><a href="#">Who we are</a></li>
+                        <li><a href="#">Careers </a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <ul class="f-link1">
+                        <li>
+                            <h3>
+                                My Account</h3>
+                        </li>
+                        <li><a href="#">Sign In</a></li>
+                        <li><a href="#">View Cart</a></li>
+                        <li><a href="#">My Wishlist</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                    <ul class="f-link1">
+                        <li>
+                            <h3>
+                                App Download</h3>
+                        </li>
+                        <li>
+                            <img src="images/app-btn.png" alt="" /></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-copy-right">
+                <div>
+                    &copy; 2013. All Rights Reserved.</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

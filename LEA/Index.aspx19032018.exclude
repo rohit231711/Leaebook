@@ -1,0 +1,84 @@
+﻿<%@ Page Title="Home" Language="C#" MasterPageFile="~/LEA_Master.master" AutoEventWireup="true" CodeFile="Index.aspx.cs" Inherits="Index" %>
+
+<%@ Register Src="~/Includes/Left_part.ascx" TagName="LeftMenu" TagPrefix="menu" %>
+<%@ Register Src="~/Includes/banner.ascx" TagName="Benner" TagPrefix="br" %>
+<%@ Register Src="~/Includes/Advertise.ascx" TagName="Advertise" TagPrefix="ad" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <script>
+        $(document).ready(function () {
+            hideAlert();
+        });
+
+        function loadMore() {
+            $.ajax({
+                type: "POST",
+                url: "Index.aspx/BindDatas",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccess,
+                failure: function (response) {
+                    alert(response.d);
+                }
+            });
+
+            function OnSuccess(response) {
+                //console.log(response.d);
+                document.getElementById('<%=div_book.ClientID%>').innerHTML += response.d;
+                var x = document.getElementById('divNoData');
+                if (x != null) {
+                    document.getElementById('aLoadData').style.display = 'none';
+                }
+            }
+            }
+
+            function hideAlert() {
+                var x = document.getElementById('divNoData');
+                if (x != null) {
+                    alert("No More Data");
+                    document.getElementById('aLoadData').style.display = 'none';
+                }
+            }
+
+    </script>
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <!--************************banner**********************-->
+   
+    <!--************************middlecontent**********************-->
+    <div class="wrap">
+        <div class="middalecontent">
+             <br:Benner ID="benner" runat="server" />
+            <%--<marquee>--%>
+            <asp:Label ID="lblCountry" runat="server" Style="font-family: 'amaranthregular'; font-size: 18px; font-weight: normal; width: 100%; float: left;"></asp:Label>
+            <%--</marquee>--%>
+            <menu:LeftMenu ID="leftmenu" runat="server" />
+            <%--<asp:HyperLink ID="hlBook" runat="server" NavigateUrl="~/book-detail/1/OLAS-DEL-HOMBRE" CssClass="boxbut load_more">Try to Click</asp:HyperLink>
+            <a href="book-detail/1/OLAS-DEL-HOMBRE" class="boxbut load_more">Try to Click Again</a>--%>
+            <div class="rightbarmid" runat="server" id="div_book" style="padding-bottom: 15px;">
+            </div>
+            <%--New Releases Books--%>
+            <div style="display: none;">
+                <Localized:LocalizedLiteral ID="lblnew" runat="server" Key="NewReleases" Colon="false" Text="New Releases" />
+            </div>
+
+            <%--<div class="holder" style="text-align:right; width:100%"></div>--%>
+        </div>
+    </div>
+    <div class="wrap">
+        <%--<div class="bookbox" style="border: none;">&nbsp;</div>--%>
+        <div class="load_more_bg">
+            <a id="aLoadData" class="boxbut load_more" style="cursor: pointer;" onclick="loadMore()">
+                <Localized:LocalizedLiteral ID="lblMore" runat="server" Key="LoadMore" Colon="false" Text="Load More" />...
+            </a>
+        </div>
+    </div>
+    <%--<div style="text-align: right; width: 100%" id="PageNo" runat="server"></div>--%>
+
+    <asp:HiddenField ID="newrelease" runat="server" Value="New Releases" />
+    <asp:HiddenField ID="viewallbook" runat="server" Value="View All eBook" />
+    <ad:Advertise ID="addvertise" runat="server" />
+
+</asp:Content>
+

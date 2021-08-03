@@ -1,0 +1,335 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="test.master.cs" Inherits="Client_test" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/dropkick.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.baby_bear').dropkick();
+            $('.mama_bear').dropkick();
+            $('.papa_bear').dropkick();
+        });
+    </script>
+    <link rel="stylesheet" href="css/dropkick.css">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div class="main">
+            <div class="container">
+                <div class="header_main">
+                    <div class="logo">
+                        <a href="#">
+                            <img src="images/logo.png" alt="" /></a>
+                    </div>
+                    <div class="top_right">
+                        <div class="top_form">
+                            <label>
+                                Select Your Currency
+                            </label>
+                            <div class="select_main">
+                                <select name="baby_bear" class="baby_bear">
+                                    <option>Us Dollar - USD</option>
+                                    <option>Us Dollar - USD</option>
+                                    <option>Us Dollar - USD</option>
+                                    <option>Us Dollar - USD</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="cear">
+                        </div>
+                        <div class="search_main">
+                            <input type="text" value="Search" class="top_input" />
+                            <input type="button" value="GO" class="top_btn" />
+                        </div>
+                    </div>
+                    <div class="navigation">
+                        <ul>
+                            <li><span class="active">&nbsp;</span><a href="#" class="active">Home</a></li>
+                            <li><span>&nbsp;</span><a href="#">Explore</a></li>
+                            <li><span>&nbsp;</span><a href="#">Read</a></li>
+                            <li><span>&nbsp;</span><a href="#">Subscribe</a></li>
+                        </ul>
+                        <div class="right_login">
+                            <ul>
+                                <li><a href="#" style="width: 70px;">sign up &nbsp; | </a></li>
+                                <li class="selected"><a href="#" style="text-align: center;">&nbsp;login &nbsp; </a>
+                                    <ul>
+                                        <li>
+                                            <div class="row2">
+                                                <div class="login">
+                                                    <div class="login-form">
+                                                        <h1 style="border: none;">
+                                                            Account Login</h1>
+                                                        <form action="">
+                                                        <label class="lab2">
+                                                            User Name
+                                                        </label>
+                                                        <div class="divClear">
+                                                        </div>
+                                                        <div class="user-text">
+                                                            <input name="" type="text" class="user" />
+                                                        </div>
+                                                        <label class="lab2">
+                                                            Password</label>
+                                                        <div class="divClear">
+                                                        </div>
+                                                        <div class="user-pass">
+                                                            <input name="" type="text" class="pass" />
+                                                        </div>
+                                                        <input type="submit" class="login-bt" value="" />
+                                                        <a href="#" class="forgot" style="background: none; color: #009933 !important; float: right;">
+                                                            Forgot Password?</a>
+                                                        <div class="divClear">
+                                                        </div>
+                                                        <div class="cheak-box">
+                                                            <input name="" type="checkbox" value="" class="chek" /><label class="lab2">
+                                                                Remember Me</label>
+                                                        </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="divClear">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li style="width: 150px;"><a href="#">&nbsp;shopping cart</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide_main_bg">
+                <div class="container">
+                    <div class="slider">
+                        <ul class="slide_main">
+                            <li>
+                                <h2>
+                                    Lorem ipsum
+                                </h2>
+                                <h1>
+                                    dolor sit amet</h1>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed<br />
+                                    egestas posuere tristique. Donec scelerisque mi porttitor lacus<br />
+                                    elementum feugiat. Fusce non magna odio.
+                                </p>
+                                <a href="#" class="view_all">
+                                    <img src="images/view-all-btn.png" alt="" /></a> </li>
+                        </ul>
+                        <a href="#" class="slide-left">
+                            <img src="images/slide-left-arrow.png" alt="" /></a> <a href="#" class="slide-right">
+                                <img src="images/slide-right-arrow.png" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="high_lights_row">
+                    <div class="high_li_part1">
+                        <img src="images/high-img1.png" class="align align1" alt="" />
+                        <a href="#" class="high_link">Read Books<br />
+                            anywhere<img src="images/arrow1.png" style="margin: 0 0 0 5px;" alt="" /></a>
+                        <p>
+                            Read articles every day. Online, offline and on all your devices.</p>
+                    </div>
+                    <div class="high_li_part1">
+                        <img src="images/high-img2.png" class="align" alt="" />
+                        <a href="#" class="high_link">Read Books<br />
+                            anywhere<img src="images/arrow1.png" style="margin: 0 0 0 5px;" alt="" /></a>
+                        <p>
+                            Read articles every day. Online, offline and on all your devices.</p>
+                    </div>
+                    <div class="high_li_part1 last">
+                        <img src="images/high-img2.png" class="align" alt="" />
+                        <a href="#" class="high_link">Read Books<br />
+                            anywhere<img src="images/arrow1.png" style="margin: 0 0 0 5px;" alt="" /></a>
+                        <p>
+                            Read articles every day. Online, offline and on all your devices.</p>
+                    </div>
+                </div>
+                <div class="contant">
+                    <div class="contant_left">
+                        <div class="row1">
+                            <img src="images/mag-1.png" alt="" style="float: left;" />
+                            <img src="images/mag-2.png" alt="" align="right" style="float: right;" />
+                        </div>
+                        <div class="row2">
+                            <h1>
+                                New Releases</h1>
+                            <ul class="mag_list">
+                                <li>
+                                    <img src="images/r-mag-3.png" class="mag_img" alt="" />
+                                    <a href="#" class="mag_name">Lorem ipsum dolor sit amet</a>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <input type="button" value="" class="detail" />
+                                </li>
+                                <li>
+                                    <img src="images/r-mag-1.png" class="mag_img" alt="" />
+                                    <a href="#" class="mag_name">Lorem ipsum dolor sit amet</a>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <input type="button" value="" class="detail" />
+                                </li>
+                                <li class="last">
+                                    <img src="images/r-mag-2.png" class="mag_img" alt="" />
+                                    <a href="#" class="mag_name">Lorem ipsum dolor sit amet</a>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <input type="button" value="" class="detail" />
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="row2">
+                            <h1 style="border: none;">
+                                Featured Articles
+                            </h1>
+                            <div class="article_main">
+                                <div class="article_box1">
+                                    <img src="images/article-img-1.png" alt="" class="article" />
+                                    <p class="text1">
+                                        Coffeeland</p>
+                                    <p class="text2">
+                                        AFAR</p>
+                                    <p class="text3">
+                                        David Farley travels to Ethiopia to find the source of a global obsession.</p>
+                                </div>
+                                <div class="article_box1 article_box2 ">
+                                    <img src="images/article-img-2.png" alt="" class="article" />
+                                    <p class="text1">
+                                        Trinidad on 50 Tastes a Day</p>
+                                    <p class="text2">
+                                        Islands</p>
+                                    <p class="text3">
+                                        Hop aboard the world's wildest culinary cab ride. But heed the warning....</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contant_right">
+                        <div class="right_cart_box">
+                            <h6>
+                                my cart</h6>
+                            <p>
+                                You have no items in your shopping cart</p>
+                            <img src="images/my-cart-bott.png" alt="" />
+                        </div>
+                        <div class="right_populer_box">
+                            <h6>
+                                popular tags</h6>
+                            <p>
+                                <a href="#" class="tag1">Antivirus</a> <a href="#" class="tag2">Apple </a><a href="#"
+                                    class="tag3">Games</a> <a href="#" class="tag4">Reference </a><a href="#" class="tag5">
+                                        Tools</a> <a href="#" class="tag6">Web</a> <a href="#" class="tag7">View All tags</a>
+                            </p>
+                            <img src="images/populer-tag-bott.png" alt="" />
+                        </div>
+                        <div class="right_social">
+                            <a href="#">
+                                <img src="images/face-icon.png" alt="" /></a> <a href="#">
+                                    <img src="images/t-icon.png" alt="" /></a> <a href="#">
+                                        <img src="images/rss-icon.png" alt="" /></a> <a href="#">
+                                            <img src="images/face-icon.png" alt="" /></a>
+                        </div>
+                        <div class="right_specials">
+                            <a href="#" class="down">
+                                <img src="images/arrow-down.png" alt="" /></a> <a href="#" class="up">
+                                    <img src="images/arrow-up.png" alt="" /></a>
+                            <h1>
+                                Specials</h1>
+                            <ul>
+                                <li>
+                                    <img src="images/spacial-mag-1.png" class="spcial-mag" alt="" />
+                                    <p class="titel">
+                                        Lorem ipsum dolor sit amet</p>
+                                    <p class="disc">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <a href="#" class="link">
+                                        <img src="images/arrow2.png" alt="" />&nbsp;&nbsp; Add to Wishlist</a> </li>
+                                <li>
+                                    <img src="images/spacial-mag-2.png" class="spcial-mag" alt="" />
+                                    <p class="titel">
+                                        Lorem ipsum dolor sit amet</p>
+                                    <p class="disc">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <a href="#" class="link">
+                                        <img src="images/arrow2.png" alt="" />&nbsp;&nbsp; Add to Wishlist</a> </li>
+                                <li>
+                                    <img src="images/spacial-mag-3.png" class="spcial-mag" alt="" />
+                                    <p class="titel">
+                                        Lorem ipsum dolor sit amet</p>
+                                    <p class="disc">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <a href="#" class="link">
+                                        <img src="images/arrow2.png" alt="" />&nbsp;&nbsp; Add to Wishlist</a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_main">
+                <div class="container">
+                    <div class="f-in">
+                        <ul class="f-link1">
+                            <li>
+                                <h3>
+                                    Information</h3>
+                            </li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Explore</a></li>
+                            <li><a href="#">Read</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms &amp; Conditions</a></li>
+                            <li><a href="#">Subscription</a></li>
+                        </ul>
+                        <ul class="f-link1">
+                            <li>
+                                <h3>
+                                    About Us</h3>
+                            </li>
+                            <li><a href="#">Company overview</a></li>
+                            <li><a href="#">Who we are</a></li>
+                            <li><a href="#">Careers </a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                        <ul class="f-link1">
+                            <li>
+                                <h3>
+                                    My Account</h3>
+                            </li>
+                            <li><a href="#">Sign In</a></li>
+                            <li><a href="#">View Cart</a></li>
+                            <li><a href="#">My Wishlist</a></li>
+                            <li><a href="#">Help</a></li>
+                        </ul>
+                        <ul class="f-link1">
+                            <li>
+                                <h3>
+                                    App Download</h3>
+                            </li>
+                            <li>
+                                <img src="images/app-btn.png" alt="" /></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="f-copy-right">
+                    <div>
+                        &copy; 2013. All Rights Reserved.</div>
+                </div>
+            </div>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

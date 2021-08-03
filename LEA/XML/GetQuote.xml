@@ -1,0 +1,52 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<p:DCTRequest xmlns:p='http://www.dhl.com'
+xmlns:p1='http://www.dhl.com/datatypes'
+xmlns:p2='http://www.dhl.com/DCTRequestdatatypes'
+xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+xsi:schemaLocation='http://www.dhl.com DCT-req.xsd '>
+  <GetQuote>
+    <Request>
+      <ServiceHeader>
+        <MessageTime>2002-08-20T11:28:56.000-08:00</MessageTime>
+        <MessageReference>1234567890123456789012345678901</MessageReference>
+        <SiteID>${SiteID}</SiteID>
+        <Password>${Password}</Password>
+      </ServiceHeader>
+    </Request>
+    <From>
+      <CountryCode>${FromCountryCode}</CountryCode>
+      <!--<Postalcode></Postalcode>-->
+      <City>San Salvador</City>
+    </From>
+    <BkgDetails>
+      <PaymentCountryCode>${PaymentCountryCode}</PaymentCountryCode>
+      <Date>${Date}</Date>
+      <ReadyTime>${ReadyTime}</ReadyTime>
+      <ReadyTimeGMTOffset>${ReadyTimeGMTOffset}</ReadyTimeGMTOffset>
+      <DimensionUnit>${DimensionUnit}</DimensionUnit>
+      <WeightUnit>${WeightUnit}</WeightUnit>
+      <Pieces>
+        ${Pieces}
+      </Pieces>
+      <PaymentAccountNumber>${PaymentAccountNumber}</PaymentAccountNumber>
+      <IsDutiable>${IsDutiable}</IsDutiable>
+      <NetworkTypeCode>${NetworkTypeCode}</NetworkTypeCode>
+      <QtdShp>
+        <GlobalProductCode>${GlobalProductCode}</GlobalProductCode>
+        <LocalProductCode>${LocalProductCode}</LocalProductCode>
+        <QtdShpExChrg>
+          <SpecialServiceType>${SpecialServiceType}</SpecialServiceType>
+        </QtdShpExChrg>
+      </QtdShp>
+    </BkgDetails>
+    <To>
+      <CountryCode>${CountryCode}</CountryCode>
+      ${Postalcode}
+      <City>${City}</City>
+    </To>
+    <Dutiable>
+      <DeclaredCurrency>${DeclaredCurrency}</DeclaredCurrency>
+      <DeclaredValue>${DeclaredValue}</DeclaredValue>
+    </Dutiable>
+  </GetQuote>
+</p:DCTRequest>

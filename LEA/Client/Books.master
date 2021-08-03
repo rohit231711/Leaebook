@@ -1,0 +1,352 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Books.master.cs" Inherits="Client_Books" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../images/fevicon.png" rel="shortcut icon" />
+    <link href="<%=ResolveUrl("css/style.css") %>" rel="stylesheet" type="text/css" />
+    <script src="<%=ResolveUrl("js/jquery.min.js")%>"></script>
+    <script src="<%=ResolveUrl("js/jquery.validationEngine.js")%>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("js/jquery.validationEngine-en.js")%>" type="text/javascript"></script>
+    <link href="<%=ResolveUrl("css/validationEngine.jquery.css")%>" rel="stylesheet"
+        type="text/css" />
+    <link href="js/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.fancybox.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function insertTag() {
+
+
+            $.ajax({
+                type: "POST",
+                url: "ws.asmx/InsertTag",
+                data: "{search:'" + $(".search").val() + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                }
+            });
+        }
+        function changecolor(item) {
+
+            $("#" + item).parent().find("li").css("background-color", "transparent");
+            $("#" + item).css("background-color", "#C9C9C9");
+        }
+        function inserttag(item) {
+            debugger;
+            $.ajax({
+                type: "POST",
+                url: '<%=ResolveUrl("ws.asmx/InsertTag") %>',
+                data: "{search:'" + item + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                }
+            })
+
+
+        }
+
+        $(function () {
+
+            $(".li1").click(function () {
+
+                $(".li1").css("display", "block");
+                $(".li1").fancybox({ 'titleShow': false,
+                    'type': 'iframe',
+                    'href': 'Login.aspx',
+                    'width': '450px',
+                    'height': '300px',
+                    'transitionIn': 'elastic',
+                    'transitionOut': 'elastic',
+                    'hideOnOverlayClick': false
+
+
+                });
+
+            });
+
+
+            $(window).keydown(function (event) {
+                if (event.keyCode == 13) {
+                    event.preventDefault();
+                    return false;
+                }
+            });
+
+
+            $(document).mouseup(function (e) {
+                var container = $(".search_main li");
+
+                if (container.has(e.target).length === 0) {
+                    container.hide();
+                }
+            });
+
+            $(".search").on('keyup click', function (event) {
+                
+                if (event.keyCode == 13 || event.which == 13) {
+                    return false;
+                }
+                if ($(".search").val() != '') {
+
+                    $(".search_main").find("li").css("display", "block");
+                    $.ajax({
+                        type: "POST",
+                        url: "ws.asmx/GetBooks",
+                        data: "{search:'" + $(".search").val() + "'}",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (msg) {
+                            $(".login1").html('');
+                            var li = '';
+
+                            $.each(eval(msg.d), function (i, item) {
+                                li += '<li id=li' + i + ' onmouseover=changecolor(this.id); style="list-style: none; padding: 10px 5px;;border-bottom: 1px solid #D6D6D6;text-decoration: none;">';
+                                var a = ' onclick=insertTag(); href=' + 'BookDetail.aspx?BookID=' + item.BookID;
+                                li += '<a style="text-decoration: none;color:green;"';
+                                li += a;
+                                li += '> ';
+
+                                li += item.Title;
+                                li += ' </a>';
+                                li += '</li>';
+                            })
+                            if (eval(msg.d) == '') {
+                                li += '<li  onmouseover=changecolor(this.id); style="list-style: none; padding: 10px 5px;;border-bottom: 1px solid #D6D6D6;text-decoration: none;">';
+                                var a = 'onclick=insertTag(); href=#';
+                                li += '<a style="text-decoration: none;color:green;"';
+                                li += a;
+                                li += '> ';
+
+                                li += 'No Record found!';
+                                li += ' </a>';
+                                li += '</li>';
+
+
+                                $(".login").append('<ul>' + li + '</ul>');
+                            }
+                            else {
+                                $(".login").append('<ul>' + li + '</ul>');
+                            }
+
+
+                        }
+                    });
+
+                }
+                else {
+                    $(".search_main").find("li").css("display", "none");
+                }
+
+
+
+            });
+            $(".hover").hover(function () {
+                $(".hover").removeClass("selected");
+                $(this).addClass("selected");
+
+
+
+            },
+            function () {
+                $(".hover").removeClass("selected");
+
+
+            });
+
+        });
+        jQuery(document).ready(function () {
+            // binds form submission and fields to the validation engine
+            //jQuery("#aspnetForm").validationEngine();
+
+
+
+        });
+    </script>
+    <%-- <link rel="stylesheet" href="css/dropkick.css" />--%>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div class="main">
+            <div class="container">
+                <div class="header_main">
+                    <div class="logo">
+                        <a href="Index.aspx">
+                            <img src="images/logo.png" alt="" /></a>
+                    </div>
+                    <div class="top_right">
+                        <%--<div class="top_form">
+                            <label>
+                                Select Your Currency
+                            </label>
+                            <div class="select_main">
+                                <select name="baby_bear" class="baby_bear">
+                                    <option>Us Dollar - USD</option>
+                                    <option>Us Dollar - USD</option>
+                                    <option>Us Dollar - USD</option>
+                                    <option>Us Dollar - USD</option>
+                                </select>
+                            </div>
+                        </div>--%>
+                        <div class="cear">
+                        </div>
+                        <asp:Panel runat="server" ID="plzj" DefaultButton="txtSearchButton">
+                            <div class="search_main" style="margin: 46px -7px 0 0">
+                                <input type="text" class="top_input search" />
+                                <input type="button" value="GO" class="top_btn" />
+                                <li style="display: none; position: relative; z-index: 1000000; background-color: #F3F5F5">
+                                    <ul>
+                                        <li>
+                                            <div class="row2" style="margin: 6px 0px 0px 9px;">
+                                                <div class="login login1" style="background-color: #F3F5F5 !important; width: 340px;
+                                                    background: none; height: auto">
+                                                    <div class="login-form">
+                                                    </div>
+                                                    <div class="divClear">
+                                                    </div>
+                                                    <asp:Button ID="txtSearchButton" runat="server" Visible="false" Style="display: none;" />
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </div>
+                        </asp:Panel>
+                    </div>
+                    <div class="navigation" style="height: 53px">
+                        <ul>
+                            <li><span id="sphome" runat="server">&nbsp;</span><a id="ahome" runat="server" href="Index.aspx">Home</a></li>
+                            <li><span id="spexplore" runat="server">&nbsp;</span><a id="aexplore" runat="server"
+                                href="Explore.aspx">Explore</a></li>
+                            <li><span id="splib" runat="server">&nbsp;</span><a id="alib" runat="server" href="MyLibrary.aspx">Your
+                                Library</a></li>
+                            <li><span id="spShop" runat="server">&nbsp;</span><a id="aShop" runat="server" href="Shop.aspx">Shop</a></li>
+                            <li><span id="spwish" runat="server">&nbsp;</span><a id="awish" runat="server" href="WishList.aspx">WishList</a></li>
+                        </ul>
+                        <%if (Session["UserSession"] == null)
+                          { %>
+                        <div class="right_login" style="float: right; margin-right: 10px;">
+                            <ul>
+                                <li class="hover" style="width: 80px"><a href="SignUp.aspx" style="width: 98px;">Register
+                                    &nbsp;|</a></li>
+                                <li id="Li1" class="hover" runat="server" style="width: 80px; text-align: center"><a
+                                    style="width: 88px; text-align: center;" href="#row2" class="li1">login &nbsp;&nbsp;|</a>
+                                </li>
+                                <li class="hover" style="width: 80px; margin-left: -5px; padding-left: 5px;"><a style="margin-left: 12px;"
+                                    href="Cart.aspx">cart</a></li>
+                            </ul>
+                        </div>
+                        <%}
+                          else
+                          { %>
+                        <div class="right_login1" style="float: right">
+                            <ul>
+                                <li class="selected1 hov" style="width: 172px;"><a href="#" style="padding-right: 0px;">
+                                    &nbsp;Welcome
+                                    <%=UserName %>
+                                </a>
+                                    <img src="images/1372785134_49360.png" width="20px" height="20px" style="padding-top: 2px;" />
+                                    <ul>
+                                        <li>
+                                            <div class="row2" style="margin: 20px 0 0">
+                                                <div class="login" style="width: 120px; height: 60px">
+                                                    <div class="login-form" style="margin: 5px;">
+                                                        <label class="lab21">
+                                                            <a href="Account.aspx" style="color: #3C9F01 !important; font-size: 13px; font-weight: bold;
+                                                                text-decoration: none !important; text-transform: none;">Account Setting</a>
+                                                        </label>
+                                                        <label class="lab21">
+                                                            <asp:HyperLink NavigateUrl="~/Client/Index.aspx?log=1" runat="server" ID="alogout"
+                                                                Style="color: #3C9F01 !important; font-size: 13px; font-weight: bold; text-decoration: none !important;
+                                                                text-transform: none;" Text="Log Out"></asp:HyperLink>
+                                                        </label>
+                                                    </div>
+                                                    <div class="divClear">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li style="width: 128px;"><a href="Cart.aspx">&nbsp;cart</a></li>
+                            </ul>
+                        </div>
+                        <%}
+                            
+                            
+                        %>
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="margin-top: 15px">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="footer_main">
+                <div class="container">
+                    <div class="f-in">
+                        <ul class="f-link1">
+                            <li>
+                                <h3>
+                                    Information</h3>
+                            </li>
+                            <li><a href="Index.aspx">Home</a></li>
+                            <li><a href="Explore.aspx">Explore</a></li>
+                            <li><a href="cms.aspx?cmsid=4">Read</a></li>
+                            <li><a href="cms.aspx?cmsid=9">Privacy Policy</a></li>
+                            <li><a href="cms.aspx?cmsid=5">Terms &amp; Conditions</a></li>
+                            <li><a href="cms.aspx?cmsid=3">Refund Policy</a></li>
+                        </ul>
+                        <ul class="f-link1">
+                            <li>
+                                <h3>
+                                    About Us</h3>
+                            </li>
+                            <li><a href="<%=ResolveUrl("AboutUs.aspx") %>">Company overview</a></li>
+                            <li><a href="cms.aspx?cmsid=6">Who we are</a></li>
+                            <li><a href="cms.aspx?cmsid=7">Careers</a></li>
+                            <li><a href="<%=ResolveUrl("ContactUs.aspx") %>">Contact</a></li>
+                            <li><a href="Shop.aspx">Product & Services</a></li>
+                        </ul>
+                        <ul class="f-link1">
+                            <li>
+                                <h3>
+                                    My Account</h3>
+                            </li>
+                            <li><a href="#" class="li1">Sign In</a></li>
+                            <li><a href="Cart.aspx">View Cart</a></li>
+                            <li>
+                                <asp:LinkButton href="WishList.aspx" ID="lnkWish" runat="server" Text="My WishList"></asp:LinkButton></li>
+                            <li><a href="Default4.aspx">Help</a></li>
+                        </ul>
+                        <ul class="f-link1">
+                            <li>
+                                <h3>
+                                    App Download</h3>
+                            </li>
+                            <li><a href="Default4.aspx">
+                                <img src="images/app-btn.png" alt="" />
+                            </a></li>
+                            <li><a href="Default4.aspx">
+                                <img src="images/anroid.png" alt="" />
+                            </a></li>
+                            <li><a href="video.aspx">
+                                <img src="images/Book-reader-green.png" alt="" />
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="f-copy-right">
+                    <div>
+                        &copy; 2013. All Rights Reserved.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

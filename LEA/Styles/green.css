@@ -1,0 +1,160 @@
+.inner_background_top{
+background-color:#fbfbfb;
+}
+.topbackground{
+background-color:#FFFFFF;
+}
+.midelbackground{
+background-image: url(../images/green_background.png);
+background-repeat:repeat-x ;
+border-bottom:1px solid #009933;
+padding-bottom:30px;
+background-color:#ffffff;
+} 
+.inner_midelbackground{
+background-image: url(../images/innergreen_background.png); 
+background-repeat:repeat-x ;
+padding-bottom:30px;
+background-color:#fbfbfb;
+} 
+.about_midelbackground{
+background-image: url(../images/about_midelbg.png)  ; 
+background-repeat:repeat-x ;
+background-color:#fbfbfb;
+} 
+.dream{
+border-bottom:2px solid #738f44;
+padding-top:12px;
+padding-bottom:12px;
+line-height:19px;
+}
+.view_profileborder{
+border-bottom:1px solid #738f44;
+}
+.coman_friends{
+color:#908f8f;
+border-bottom:2px solid #738f44;
+font-size:12px;
+font-weight:bold;
+padding-bottom:6px;
+}
+.coman_friends1{
+color:#908f8f;
+border-bottom:2px solid #738f44;
+font-size:12px;
+font-weight:bold;
+padding-bottom:6px;
+padding-left:10px;
+}
+
+.rightborder{
+border-bottom:1px solid #d6d6d6;
+padding-bottom:6px;
+}
+.rightborder1{
+border-bottom:1px solid #d6d6d6;
+}
+.love_border{
+border-bottom:2px solid #738f44;
+}
+.midel_border{
+border:1px solid #eaeaea;
+background-color:#FFFFFF;
+}
+.midel_border1{
+border-bottom:1px solid #eaeaea;
+}
+.yellow_border{
+background-image:url(../images/yellowbg.png);
+background-repeat:no-repeat;
+background-position:center;
+}
+.what{
+padding-left:5px;
+padding-top:8px;
+border:1px solid #d0e5ac;
+padding-bottom:5px;
+}
+.share{
+font-size:11px;
+color:#FFFFFF;
+font-weight:bold;
+background-color:#839f53;
+}
+.coman_imageborder{
+border:2px solid #cacaca;
+}
+.coman_imageborder1{
+border:2px solid #9ea571;
+}
+.yellowbg{
+background-color:#f0f8bc;
+border-bottom:2px solid #FFFFFF;
+}
+.yellowbg1{
+background-color:#f0f8bc;
+color:#000000;
+padding-left:8px;
+padding-bottom:9px;
+padding-top:10px;
+line-height:18px;
+}
+.yellowbg_school{
+background-color:#f0f8bc;
+border:1px solid #dadada;
+}
+.goa{
+font-size:12px;
+font-weight:bold;
+color:#707070;
+}
+.newborder_rightpart{
+background-image: url(../images/rightborder.png);
+background-repeat: repeat-x;
+background-position:center;
+}
+.midelpart_border{
+background-image: url(../images/midelpart_border.png);
+background-repeat: repeat-x;
+background-position:center;
+}
+
+.image_margintop{
+margin-top:14px;
+}
+.add_imageborder{
+border:1px solid #d5d5d5;
+}
+.play_rummy{
+padding-left:8px;
+padding-right:8px;
+padding-top:10px;
+line-height:18px;
+color:#000000;
+border-bottom:1px solid #738f44;
+padding-bottom:5px;
+}
+img.midel_imageborder{
+border:1px solid #84a054;
+}
+img.midel_imageborder:hover{
+border:1px solid #020202;
+}
+ /* bottomborder */ 
+.inner_border{
+border-top:1px solid #009933;
+background-color:#fbfbfb;
+}
+ /* our faculty page border */ 
+ .contant_border{
+border-bottom:1px solid #d6d6d6;
+padding-bottom:19px;
+}
+/* message listing page border */ 
+.messageyellow_border{
+background-image:url(../images/yellowbg.png);
+background-repeat:no-repeat;
+background-position:center;
+background-color:#f7fdd3;
+padding-bottom:6px;
+}

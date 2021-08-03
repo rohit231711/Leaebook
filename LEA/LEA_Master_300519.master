@@ -1,0 +1,264 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="LEA_Master.master.cs" Inherits="LEA_Master" %>
+
+<%@ Register Src="Includes/header.ascx" TagName="Header" TagPrefix="hd" %>
+<%@ Register Src="Includes/Header_CartMenu.ascx" TagName="CartMenu" TagPrefix="cm" %>
+<%@ Register Src="Includes/Header_SP_EN.ascx" TagName="SPENMenu" TagPrefix="SPEN" %>
+<%@ Register Src="Includes/Header_SocialMenu.ascx" TagName="SocialMenu" TagPrefix="scl" %>
+<%@ Register Src="Includes/Header_Menu.ascx" TagName="HeaderMenu" TagPrefix="hm" %>
+<%@ Register Src="Includes/Editorschoice.ascx" TagName="Editors" TagPrefix="ed" %>
+<%@ Register Src="Includes/Footer.ascx" TagName="footer" TagPrefix="ft" %>
+<%@ Import Namespace="System.Globalization" %>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="<%= ConfigurationManager.AppSettings.Get("SiteUrlMain") + "images/header_logo2.ico" %>" rel="shortcut icon" type="image/x-icon" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+
+     <!-- Global site tag (gtag.js) - Google Ads: 781010452 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-781010452"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-781010452');
+    </script>
+
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128559417-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-128559417-1');
+    </script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            // browser window scroll (in pixels) after which the "back to top" link is shown
+            var offset = 300,
+                //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+                offset_opacity = 1200,
+                //duration of the top scrolling animation (in ms)
+                scroll_top_duration = 600,
+                //grab the "back to top" link
+                $back_to_top = $('.cd-top');
+
+            //hide or show the "back to top" link
+            $(window).scroll(function () {
+                ($(this).scrollTop() > offset) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+                if ($(this).scrollTop() > offset_opacity) {
+                    $back_to_top.addClass('cd-fade-out');
+                }
+            });
+
+            //smooth scroll to top
+            $back_to_top.on('click', function (event) {
+                event.preventDefault();
+                $('body,html').animate({
+                    scrollTop: 0,
+                }, scroll_top_duration
+                );
+            });
+			var hh = '<%=System.Threading.Thread.CurrentThread.CurrentCulture.Name %>';
+            if (hh == "es-ES")
+                $(".breadcrumb a").first().attr("href", "/");
+            else
+                $(".breadcrumb a").first().attr("href", "/us/");
+
+        });
+
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title></title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="js/responsivemobilemenu.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/abeeze-font/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="css/ARBERKLEY/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="css/amr/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="css/gabriola/stylesheet.css" rel="stylesheet" type="text/css" />
+    <style>
+        .cd-top.cd-is-visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+            transition: opacity 0.3s ease 0s, visibility 0s ease 0s;
+        }
+
+        .cd-top {
+            background: #3a96fd url("images/toparw.png") no-repeat scroll center !important;
+            bottom: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: inline-block;
+            height: 10px;
+            opacity: 0;
+            overflow: hidden;
+            position: fixed;
+            right: 0px;
+            text-indent: 100%;
+            transition: opacity 0.3s ease 0s, visibility 0s ease 0.3s;
+            visibility: hidden;
+            white-space: nowrap;
+            width: 40px;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+   
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-70795827-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+    
+
+
+  <meta name="google-site-verification" content="zJOW5P-mlqUL0LyIpEyJ29_z9cpNrEFzIxDTOAJbq0U" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <div>
+            <!--************************hedar start**********************-->
+            <div class="hedar_top">
+                <div class="wrap1">
+                    <cm:CartMenu ID="CartMenu1" runat="server" />
+                </div>
+            </div>
+            <div class="hedar">
+                <%--Header Logo--%>
+                <div class="wrap1">
+                    <div class="logo">
+                        <%--<img src="images/header_logo.png" alt="" />--%>
+                    </div>
+                    <hd:Header ID="header" runat="server" />
+                    <div class="serch-boxx">
+                        <div style="float: left;">
+                            <div>
+                                <asp:DropDownList ID="drpglobalcat" runat="server" class="Globalsearchcat">
+                                    <asp:ListItem Text="All" Value="0"></asp:ListItem>
+                                    <asp:ListItem Text="Story" Value="1"></asp:ListItem>
+                                    <asp:ListItem Text="English" Value="104"></asp:ListItem>
+                                </asp:DropDownList>
+
+                                <%--          <select title="Search in" name="url" class="Globalsearchcat" id="searchDropdownBox" data-nav-tabindex="20" data-nav-selected="0" data-nav-digest="2Z2XEwg5XlpVRWcHNFsDgf9Ysfk" class="nav-search-dropdown searchSelect" tabindex="1" style="top: 0px;">
+                                    <option value="search-alias=aps" selected="selected">All Categories</option>
+                                    <option value="search-alias=baby">Baby</option>
+                                    <option value="search-alias=beauty">Beauty</option>
+                                    <option value="search-alias=stripbooks">Books</option>
+                                    <option value="search-alias=automotive">Car &amp; Motorbike</option>
+                                    <option value="search-alias=apparel">Clothing &amp; Accessories</option>
+                                    <option value="search-alias=computers">Computers &amp; Accessories</option>
+                                    <option value="search-alias=electronics">Electronics</option>
+                                    <option value="search-alias=gift-cards">Gift Cards</option>
+                                    <option value="search-alias=grocery">Gourmet &amp; Specialty Foods</option>
+                                    <option value="search-alias=hpc">Health &amp; Personal Care</option>
+                                    <option value="search-alias=kitchen">Home &amp; Kitchen</option>
+                                    <option value="search-alias=industrial">Industrial &amp; Scientific</option>
+                                    <option value="search-alias=jewelry">Jewellery</option>
+                                    <option value="search-alias=digital-text">Kindle Store</option>
+                                    <option value="search-alias=everyday-essentials">KiranaNow</option>
+                                    <option value="search-alias=luggage">Luggage &amp; Bags</option>
+                                    <option value="search-alias=dvd">Movies &amp; TV Shows</option>
+                                    <option value="search-alias=popular">Music</option>
+                                    <option value="search-alias=mi">Musical Instruments</option>
+                                    <option value="search-alias=office-products">Office Products</option>
+                                    <option value="search-alias=pets">Pet Supplies</option>
+                                    <option value="search-alias=shoes">Shoes &amp; Handbags</option>
+                                    <option value="search-alias=software">Software</option>
+                                    <option value="search-alias=sporting">Sports, Fitness &amp; Outdoors</option>
+                                    <option value="search-alias=toys">Toys &amp; Games</option>
+                                    <option value="search-alias=videogames">Video Games</option>
+                                    <option value="search-alias=watches">Watches</option>
+ 
+                                </select>--%>
+                                <%-- <div data-value="search-alias=aps" class="nav-search-facade">
+
+                                    <i class="overlay-arrow">&#9660;</i>
+                                </div>--%>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            $("#txt_Globalsearch").keyup(function (event) {
+                                if (event.keyCode == 13) {
+                                    $("#Button1").click();
+                                }
+                            });
+                        </script>
+                        <div style="float: left;">
+                            <div class="nav-search-field">
+                                <asp:TextBox ID="txt_Globalsearch" runat="server" class="Globalsearchnickinp"></asp:TextBox>
+                            </div>
+                            <div id="nav-iss-attach"></div>
+                        </div>
+                        <div>
+                            <asp:Button ID="Button1" runat="server" Text="Go" class="nav-input" OnClick="btn_search" CssClass="Globalsearchbtn" />
+                        </div>
+                    </div>
+                    <div class="signmenu">
+                        <%--cart menu--%>
+
+                        <div class="spbox">
+                            <%--SP|EN--%>
+                            <SPEN:SPENMenu ID="SPENMenu1" runat="server" />
+                            <%--Social--%>
+                            <scl:SocialMenu ID="SocialMenu1" runat="server" />
+                        </div>
+                    </div>
+
+                    <%--header menu--%>
+                    <hm:HeaderMenu ID="HeaderMenu1" runat="server" />
+
+
+                </div>
+            </div>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div style="margin: 10px;"></div>
+        <!--************************Editorschoice**********************-->
+        <ed:Editors ID="Editors1" runat="server" />
+        <div class="toparw">
+            <a href="#0" class="cd-top"></a>
+        </div>
+        <!--************************footer**********************-->
+        <ft:footer ID="footer1" runat="server" />
+    </form>
+  <!-- begin olark code 
+    <script type="text/javascript" async>
+        ; (function (o, l, a, r, k, y) {
+            if (o.olark) return;
+            r = "script"; y = l.createElement(r); r = l.getElementsByTagName(r)[0];
+            y.async = 1; y.src = "//" + a; r.parentNode.insertBefore(y, r);
+            y = o.olark = function () { k.s.push(arguments); k.t.push(+new Date) };
+            y.extend = function (i, j) { y("extend", i, j) };
+            y.identify = function (i) { y("identify", k.i = i) };
+            y.configure = function (i, j) { y("configure", i, j); k.c[i] = j };
+            k = y._ = { s: [], t: [+new Date], c: {}, l: a };
+        })(window, document, "static.olark.com/jsclient/loader.js");
+        /* Add configuration calls below this comment */
+        olark.identify('3949-497-10-5364');</script>
+   end olark code -->
+</body>
+</html>

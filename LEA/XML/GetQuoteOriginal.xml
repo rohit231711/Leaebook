@@ -1,0 +1,198 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<p:DCTRequest xmlns:p='http://www.dhl.com'
+xmlns:p1='http://www.dhl.com/datatypes'
+xmlns:p2='http://www.dhl.com/DCTRequestdatatypes'
+xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+xsi:schemaLocation='http://www.dhl.com DCT-req.xsd '>
+  <GetQuote>
+    <Request>
+      <ServiceHeader>
+        <MessageTime>2002-08-20T11:28:56.000-08:00</MessageTime>
+        <MessageReference>1234567890123456789012345678901</MessageReference>
+        <SiteID>xmleditcinco</SiteID>
+        <Password>I64XtmJUzF</Password>
+      </ServiceHeader>
+    </Request>
+    <From>
+      <CountryCode>US</CountryCode>
+      <Postalcode>10504</Postalcode>
+    </From>
+    <BkgDetails>
+      <PaymentCountryCode>SG</PaymentCountryCode>
+      <Date>2016-07-07</Date>
+      <ReadyTime>PT10H21M</ReadyTime>
+      <ReadyTimeGMTOffset>+01:00</ReadyTimeGMTOffset>
+      <DimensionUnit>CM</DimensionUnit>
+      <WeightUnit>KG</WeightUnit>
+      <Pieces>
+        <Piece>
+          <PieceID>1</PieceID>
+          <Height>1</Height>
+          <Depth>1</Depth>
+          <Width>1</Width>
+          <Weight>5.0</Weight>
+        </Piece>
+        <Piece>
+          <PieceID>2</PieceID>
+          <Height>1</Height>
+          <Depth>1</Depth>
+          <Width>1</Width>
+          <Weight>5.0</Weight>
+        </Piece>
+      </Pieces>
+      <PaymentAccountNumber>CASHSIN</PaymentAccountNumber>
+      <IsDutiable>Y</IsDutiable>
+      <NetworkTypeCode>AL</NetworkTypeCode>
+      <QtdShp>
+        <GlobalProductCode>P</GlobalProductCode>
+        <LocalProductCode>P</LocalProductCode>
+        <QtdShpExChrg>
+          <SpecialServiceType>II</SpecialServiceType>
+        </QtdShpExChrg>
+      </QtdShp>
+    </BkgDetails>
+    <To>
+      <CountryCode>IN</CountryCode>
+      <Postalcode>380013</Postalcode>
+    </To>
+    <Dutiable>
+      <DeclaredCurrency>EUR</DeclaredCurrency>
+      <DeclaredValue>1.0</DeclaredValue>
+    </Dutiable>
+  </GetQuote>
+</p:DCTRequest>
+
+
+<!--
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<res:DCTResponse xmlns:res="http://www.dhl.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dhl.com DCT-Response.xsd">
+  <GetQuoteResponse>
+    <Response>
+      <ServiceHeader>
+        <MessageTime>2016-07-07T08:58:16.149+01:00</MessageTime>
+        <MessageReference>1234567890123456789012345678901</MessageReference>
+        <SiteID>xmleditcinco</SiteID>
+      </ServiceHeader>
+    </Response>
+    <BkgDetails>
+      <OriginServiceArea>
+        <FacilityCode>NWK</FacilityCode>
+        <ServiceAreaCode>NWK</ServiceAreaCode>
+      </OriginServiceArea>
+      <DestinationServiceArea>
+        <FacilityCode>XSC</FacilityCode>
+        <ServiceAreaCode>SIN</ServiceAreaCode>
+      </DestinationServiceArea>
+      <QtdShp>
+        <GlobalProductCode>P</GlobalProductCode>
+        <LocalProductCode>P</LocalProductCode>
+        <ProductShortName>EXPRESS WORLDWIDE</ProductShortName>
+        <LocalProductName>EXPRESS WORLDWIDE NONDOC</LocalProductName>
+        <NetworkTypeCode>TD</NetworkTypeCode>
+        <POfferedCustAgreement>N</POfferedCustAgreement>
+        <TransInd>Y</TransInd>
+        <PickupDate>2016-07-07</PickupDate>
+        <PickupCutoffTime>PT17H</PickupCutoffTime>
+        <BookingTime>PT16H</BookingTime>
+        <CurrencyCode>SGD</CurrencyCode>
+        <ExchangeRate>0.667989</ExchangeRate>
+        <WeightCharge>274.550</WeightCharge>
+        <WeightChargeTax>0.000</WeightChargeTax>
+        <TotalTransitDays>4</TotalTransitDays>
+        <PickupPostalLocAddDays>0</PickupPostalLocAddDays>
+        <DeliveryPostalLocAddDays>0</DeliveryPostalLocAddDays>
+        <PickupNonDHLCourierCode />
+        <DeliveryNonDHLCourierCode />
+        <DeliveryDate>2016-07-11</DeliveryDate>
+        <DeliveryTime>PT23H59M</DeliveryTime>
+        <DimensionalWeight>5.000</DimensionalWeight>
+        <WeightUnit>KG</WeightUnit>
+        <PickupDayOfWeekNum>4</PickupDayOfWeekNum>
+        <DestinationDayOfWeekNum>1</DestinationDayOfWeekNum>
+        <QtdShpExChrg>
+          <SpecialServiceType>FF</SpecialServiceType>
+          <LocalServiceType>FF</LocalServiceType>
+          <GlobalServiceName>FUEL SURCHARGE</GlobalServiceName>
+          <LocalServiceTypeName>FUEL SURCHARGE</LocalServiceTypeName>
+          <SOfferedCustAgreement>N</SOfferedCustAgreement>
+          <ChargeCodeType>SCH</ChargeCodeType>
+          <CurrencyCode>SGD</CurrencyCode>
+          <ChargeValue>29.510</ChargeValue>
+          <QtdSExtrChrgInAdCur>
+            <ChargeValue>29.510</ChargeValue>
+            <CurrencyCode>SGD</CurrencyCode>
+            <CurrencyRoleTypeCode>BILLC</CurrencyRoleTypeCode>
+          </QtdSExtrChrgInAdCur>
+          <QtdSExtrChrgInAdCur>
+            <ChargeValue>29.510</ChargeValue>
+            <CurrencyCode>SGD</CurrencyCode>
+            <CurrencyRoleTypeCode>PULCL</CurrencyRoleTypeCode>
+          </QtdSExtrChrgInAdCur>
+          <QtdSExtrChrgInAdCur>
+            <ChargeValue>19.710</ChargeValue>
+            <ChargeTaxRate>0.667989</ChargeTaxRate>
+            <CurrencyCode>EUR</CurrencyCode>
+            <CurrencyRoleTypeCode>BASEC</CurrencyRoleTypeCode>
+          </QtdSExtrChrgInAdCur>
+        </QtdShpExChrg>
+        <PricingDate>2016-07-07</PricingDate>
+        <ShippingCharge>304.060</ShippingCharge>
+        <TotalTaxAmount>0.000</TotalTaxAmount>
+        <QtdSInAdCur>
+          <CurrencyCode>SGD</CurrencyCode>
+          <CurrencyRoleTypeCode>BILLC</CurrencyRoleTypeCode>
+          <WeightCharge>274.550</WeightCharge>
+          <TotalAmount>304.060</TotalAmount>
+          <TotalTaxAmount>0.000</TotalTaxAmount>
+          <WeightChargeTax>0.000</WeightChargeTax>
+        </QtdSInAdCur>
+        <QtdSInAdCur>
+          <CurrencyCode>SGD</CurrencyCode>
+          <CurrencyRoleTypeCode>PULCL</CurrencyRoleTypeCode>
+          <WeightCharge>274.550</WeightCharge>
+          <TotalAmount>304.060</TotalAmount>
+          <TotalTaxAmount>0.000</TotalTaxAmount>
+          <WeightChargeTax>0.000</WeightChargeTax>
+        </QtdSInAdCur>
+        <QtdSInAdCur>
+          <ExchangeRate>0.667989</ExchangeRate>
+          <CurrencyCode>EUR</CurrencyCode>
+          <CurrencyRoleTypeCode>BASEC</CurrencyRoleTypeCode>
+          <WeightCharge>183.400</WeightCharge>
+          <TotalAmount>203.110</TotalAmount>
+          <TotalTaxAmount>0.000</TotalTaxAmount>
+          <WeightChargeTax>0.000</WeightChargeTax>
+        </QtdSInAdCur>
+      </QtdShp>
+    </BkgDetails>
+    <Srvs>
+      <Srv>
+        <GlobalProductCode>P</GlobalProductCode>
+        <MrkSrv>
+          <LocalProductCode>P</LocalProductCode>
+          <ProductShortName>EXPRESS WORLDWIDE</ProductShortName>
+          <LocalProductName>EXPRESS WORLDWIDE NONDOC</LocalProductName>
+          <NetworkTypeCode>TD</NetworkTypeCode>
+          <POfferedCustAgreement>N</POfferedCustAgreement>
+          <TransInd>Y</TransInd>
+        </MrkSrv>
+        <MrkSrv>
+          <LocalServiceType>FF</LocalServiceType>
+          <GlobalServiceName>FUEL SURCHARGE</GlobalServiceName>
+          <LocalServiceTypeName>FUEL SURCHARGE</LocalServiceTypeName>
+          <SOfferedCustAgreement>N</SOfferedCustAgreement>
+          <ChargeCodeType>SCH</ChargeCodeType>
+          <MrkSrvInd>N</MrkSrvInd>
+        </MrkSrv>
+        <MrkSrv>
+          <LocalServiceType>II</LocalServiceType>
+          <GlobalServiceName>SHIPMENT INSURANCE</GlobalServiceName>
+          <LocalServiceTypeName>SHIPMENT INSURANCE</LocalServiceTypeName>
+          <ChargeCodeType>XCH</ChargeCodeType>
+          <MrkSrvInd>Y</MrkSrvInd>
+        </MrkSrv>
+      </Srv>
+    </Srvs>
+  </GetQuoteResponse>
+</res:DCTResponse>
+-->

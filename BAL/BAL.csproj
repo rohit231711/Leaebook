@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E517C051-5565-483B-80A5-A44DFC21EB49}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BAL</RootNamespace>
+    <AssemblyName>BAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="StringParser">
+      <HintPath>..\..\SonicStudio\SonicStudio\Bin\StringParser.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebResourceProvider">
+      <HintPath>..\..\SonicStudio\SonicStudio\Bin\WebResourceProvider.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdvertisementsBAL.cs" />
+    <Compile Include="Application.cs" />
+    <Compile Include="BAL_Account.cs" />
+    <Compile Include="BannerBAL.cs" />
+    <Compile Include="BlogBAL.cs" />
+    <Compile Include="BookDeliveryAddressBAL.cs" />
+    <Compile Include="BookShippingBAL.cs" />
+    <Compile Include="CategoryBAL.cs" />
+    <Compile Include="Category_Locale.cs" />
+    <Compile Include="CmsBAL.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="dbconnection.cs" />
+    <Compile Include="DHLQuoteSettingBAL.cs" />
+    <Compile Include="EmailSender.cs" />
+    <Compile Include="EncryptDecrypt.cs" />
+    <Compile Include="General.cs" />
+    <Compile Include="BookBAL.cs" />
+    <Compile Include="BookIssueBAL.cs" />
+    <Compile Include="BookOrderBAL.cs" />
+    <Compile Include="BookPurchaseBAL.cs" />
+    <Compile Include="LanguageBAL.cs" />
+    <Compile Include="MenuBAL.cs" />
+    <Compile Include="Price.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrationBAL.cs" />
+    <Compile Include="GetQuote.cs" />
+    <Compile Include="service.cs" />
+    <Compile Include="service_dal.cs" />
+    <Compile Include="Shipment.cs" />
+    <Compile Include="ShippingBAL.cs" />
+    <Compile Include="Tracking.cs" />
+    <Compile Include="Translator.cs" />
+    <Compile Include="UserinfoBAL.cs" />
+    <Compile Include="VedioBAL.cs" />
+    <Compile Include="WebConfig.cs" />
+    <Compile Include="ShippingSettings.cs" />
+    <Compile Include="WebsiteSettingsBAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{0AA41551-B4FB-4239-8A46-5450A9D9A90D}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PAL\PAL.csproj">
+      <Project>{D06BBC70-2295-44BC-9D73-FEAF5244926B}</Project>
+      <Name>PAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
